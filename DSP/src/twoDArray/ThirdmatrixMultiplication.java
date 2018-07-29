@@ -1,34 +1,13 @@
 package twoDArray;
 
-import java.util.Scanner;
-
 public class ThirdmatrixMultiplication {
 
 	public static void main(String[] args) {
-		
-		int first[][]=takeInput();
-		display(first);
-		int second[][]=takeInput();
-		display(second);
 
-	}
-	public static int[][] takeInput() {
-		int ar[][];
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the number of rows");
-		int rows = sc.nextInt();
-		System.out.println("Enter the number of columns");
-		int cols = sc.nextInt();
-
-		ar = new int[rows][cols];
-
-		for (int i = 0; i < ar.length; i++) {
-			for (int j = 0; j < ar[0].length; j++) {
-				System.out.println("Enter the value for thec cell [" + i + "," + j + "]");
-				ar[i][j] = sc.nextInt();
-			}
-		}
-		return ar;
+		int first[][] = {
+				{ 10, 0, 0 }, { 1, 2, 3 }, };
+		int second[][] = { { 5, 0, 1, 0 }, { 10, 0, 0, 10 }, { 1, 1, 2, 2 } };
+		multiply(first, second);
 	}
 
 	public static void display(int ar[][]) {
@@ -39,13 +18,29 @@ public class ThirdmatrixMultiplication {
 			System.out.println(".");
 		}
 	}
-	
-	public static int[][] multiply(int first[][],int second[][])
-	{
-		int answer[][] = null;
-		
-		
-		
+
+	public static int[][] multiply(int first[][], int second[][]) {
+
+		int r1 = first.length;
+		int c1 = first[0].length;
+		int r2 = second.length;
+		int c2 = second[0].length;
+		int answer[][] = new int[r1][c2];
+
+		if (c1 != r2) {
+			System.out.println("they cannot be multiplied");
+		} else {
+			for (int i = 0; i < r1; i++) {
+				for (int j = 0; j < c2; j++) {
+
+					for (int k = 0; k < r2; k++) {
+						answer[i][j] = answer[i][j] + first[i][k] * second[k][j];
+					}
+				}
+			}
+			display(answer);
+		}
+
 		return answer;
 	}
 }

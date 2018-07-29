@@ -8,17 +8,17 @@ public class Kadanes {
 		int osum=ar[0];
 		for(int i=1;i<ar.length;i++)
 		{
-			if(csum +ar[i]>ar[i])
+			if(csum +ar[i]>ar[i])//csum>0
 			{
 				csum+=ar[i];
-				osum=csum;
+				//osum=csum;
 			}
 			else
 			{
 				csum=ar[i];
-				osum=ar[i];
+				//osum=ar[i];
 			}
-			
+			osum=csum;
 		}
 		System.out.println(osum);
 
