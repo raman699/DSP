@@ -3,7 +3,7 @@ package arrays;
 public class Kadanes {
 
 	public static void main(String[] args) {
-		int ar[]= {2,3,-6,1,2,3,-4,5};
+		int ar[]= {-2, -7, -2, -3, -4, -5};
 		int csum=ar[0];
 		int osum=ar[0];
 		for(int i=1;i<ar.length;i++)
@@ -18,7 +18,8 @@ public class Kadanes {
 				csum=ar[i];
 				//osum=ar[i];
 			}
-			osum=csum;
+            if(csum>osum)
+            osum=csum;
 		}
 		System.out.println(osum);
 

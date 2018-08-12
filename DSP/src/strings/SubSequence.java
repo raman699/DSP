@@ -4,10 +4,6 @@ public class SubSequence {
 
 	public static void main(String[] args) {
 		String str = "abcd";
-		int tnum = 1;
-//		for (int i = 0; i < str.length(); i++) {
-//			tnum = tnum * 2;
-//		}
  // if you have to calculate the power of 2 
 		//means doubling you can use 1<<str.length()
 		//0001=1

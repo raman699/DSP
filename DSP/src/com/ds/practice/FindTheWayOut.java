@@ -39,7 +39,7 @@ public class FindTheWayOut {
 					posi = 0;
 					posj = j;
 				} else if (i > ar.length - 1) {
-					posi = ar.length;
+					posi = ar.length-1;
 					posj = j;
 				}
 				if (j < 0) {
@@ -47,7 +47,7 @@ public class FindTheWayOut {
 					posi = i;
 				}
 				if (j > ar.length - 1) {
-					posj = ar.length;
+					posj = ar.length-1;
 					posi = i;
 				}
 				break;
