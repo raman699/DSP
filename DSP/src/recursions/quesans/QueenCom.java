@@ -14,8 +14,7 @@ public class QueenCom {
 	public static void com(boolean boxes[], int tnq, int tqp, int previousPos, String asf)
 
 	{
-		if (tn
-				q == tqp) {
+		if (tnq == tqp) {
 			count++;
 			System.out.println(count + " " + asf);
 			return;

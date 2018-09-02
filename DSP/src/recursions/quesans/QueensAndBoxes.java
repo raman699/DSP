@@ -6,6 +6,7 @@ public class QueensAndBoxes {
 
 	public static void main(String[] args) {
 		getWaysQnBCom(new boolean[4], 2, 0, "",-1);
+		//getWaysQnB(new boolean[4],2,0,"");
 		System.out.println(count);
 
 	}
@@ -35,7 +36,7 @@ public class QueensAndBoxes {
 		for (int b = lqpb+1; b < boxes.length; b++) {
 			if (!boxes[b]) {
 				boxes[b] = true;
-				getWaysQnBCom(boxes, tq, tqp + 1, asf + "q" + (tqp + 1) + "b" + b,lqpb+b);
+				getWaysQnBCom(boxes, tq, tqp + 1, asf + "q" + (tqp + 1) + "b" + b,b);
 				boxes[b] = false;
 			}
 		}
