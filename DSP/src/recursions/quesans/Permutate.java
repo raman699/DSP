@@ -9,7 +9,7 @@ public class Permutate {
 		// printPermuatationsOnTheBasisOfAnswer(new StringBuilder("abc"),new
 		// StringBuilder());
 		//printPermuatationsOnTheBasisOfQuestion(new StringBuilder("abc"), new StringBuilder());
-		printUniquePermuatationsOnTheBasisOfQuestion(new StringBuilder("abab"), new StringBuilder());
+		printPermuatationsOnTheBasisOfAnswer(new StringBuilder("aab"), new StringBuilder());
 		System.out.println(count);
 
 	}
