@@ -11,8 +11,10 @@ public class EquiSets {
 		int ar[] = { 10, 20, 30, 40, 50 };
 		// printEquiSet(ar, 0, new ArrayList<Integer>(), 0, new ArrayList<Integer>(),
 		// 0);
-		// targetSet(ar, 0, new ArrayList<Integer>(), 0, 50);
-		printSSSprintPermuations(new StringBuilder("abc"), new StringBuilder(""));
+		//targetSet(ar, 0, new ArrayList<Integer>(), 0, 50);
+		ArrayList<String> al=targetSetArrayList(ar,0, new ArrayList<Integer>(),0,50);
+		System.out.println(al);
+	//	printSSSprintPermuations(new StringBuilder("abc"), new StringBuilder(""));
 		//printPermuations("abab", "");
 		System.out.println(count);
 		// StringBuilder s= new StringBuilder();
@@ -53,6 +55,48 @@ public class EquiSets {
 
 	}
 
+	public static ArrayList<String> targetSetArrayList(int ar[], int vidx, ArrayList<Integer> set1, int ss1, int tar) {
+		if (vidx == ar.length) {
+			if (ss1 == tar) {
+				System.out.println(set1);
+				ArrayList<String> bal= new ArrayList<String>();
+				String bs="";
+				for(Integer i:set1)
+				{
+					bs+=i;
+					bs+=" ";
+				}
+				bal.add(bs);
+				// System.out.println(set2);
+				count++;
+				return bal;
+			}
+			return new ArrayList<String>();
+		}
+		ArrayList<String> res= new ArrayList<String>(); 
+		ArrayList<String> fal=targetSetArrayList(ar, vidx + 1, set1, ss1, tar);
+		if(fal.size()>0)
+		{
+			for(String s:fal)
+			{
+				res.add(s);
+			}
+		}
+		set1.add(ar[vidx]);
+		ArrayList<String> sal=targetSetArrayList(ar, vidx + 1, set1, ss1 + ar[vidx], tar);
+		if(sal.size()>0)
+		{
+			for(String s:sal)
+			{
+				res.add(s);
+			}
+		}
+		set1.remove(set1.size() - 1);
+		return res;
+
+	}
+
+	
 	public static void printPermuations(String ques, String ans) {
 		if (ques.length() == 0) {
 			System.out.println(ans);

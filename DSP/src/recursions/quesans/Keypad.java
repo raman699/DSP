@@ -1,12 +1,19 @@
 package recursions.quesans;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Keypad {
+	static ArrayList<String> al= new ArrayList<String>();
 	static int c = 0;
-	static String[] codes = { ".;", "abc", "de", "fghi", "jkl", "mn", "opq", "rstu", "vw", "xyz" };
+	static String[] codes = { ".;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
 
 	public static void main(String[] args) {
 
-		getKeypad("784", "");
+		Scanner sc = new Scanner(System.in);
+		int n= sc.nextInt();
+		getKeypad(n+"", "");
+		System.out.println(al);
 		System.out.println(c);
 	}
 
@@ -15,6 +22,7 @@ public class Keypad {
 		if (ques.length() == 0) {
 			c++;
 			System.out.println(asf);
+			al.add(asf);
 			return;
 		}
 		char ch = ques.charAt(0);

@@ -1,12 +1,15 @@
-package stacks;
+package hackerrankQuestion;
+
+import java.util.Scanner;
 
 public class ValidString {
 
-	static Stack stack = new Stack(5);
+
 
 	public static void main(String[] args) {
-		String s = "[a+{h+(c+d)+e}+f]";
-		s="[a+{b+(c+d)+e}+f]}";
+		Scanner sc = new Scanner(System.in);
+		//String s = "[a+{h+(c+d)+e}+f]";
+		String s= sc.next();
 
 		boolean valid = false;
 		for (int i = 0; i < s.length(); i++) {
@@ -28,9 +31,20 @@ public class ValidString {
 
 	}
 
-	public static boolean isValid(int i) {
-		//if (!stack.isFull()) {
-			char ch = (char) i;
+	public static boolean check(String str,int vidx)
+	{
+		boolean valid = false;
+		for (int i = 0; i < str.length(); i++) {
+			valid = isValid(str.charAt(i)+"",vidx+1);
+			
+			if (!valid) {
+				break;
+			}
+		}
+	}
+	public static boolean isValid(String str,int vidx) {
+		
+			char ch = (char) vidx;
 			char chTop = (char) stack.top();
 			if(ch != '('&& ch!= '{' && ch!='[' &&
 	      		ch != ')'&& ch!= '}' && ch!=']')
@@ -38,7 +52,7 @@ public class ValidString {
 				return true;
 			}
 			 if (ch == '[' || ch == '{' || ch == '(') {
-				stack.push(i);
+				stack.push(vidx);
 				return true;
 			}
 			if (chTop == '(' && ch != ')') {
@@ -69,7 +83,7 @@ public class ValidString {
 		//}
 		 if (stack.isEmpty())
 		{
-			char ch1 = (char) i;
+			char ch1 = (char) vidx;
 			if (ch1 == ']' || ch1 == '}' || ch1 == ')')
 			{
 				System.out.println("Wrong pattern");

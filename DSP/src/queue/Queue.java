@@ -2,9 +2,9 @@ package queue;
 
 public class Queue {
 
-	private int front = 0;
-	private int size = 0;
-	private int data[];
+	protected int front = 0;
+	protected int size = 0;
+	protected int data[];
 
 	public Queue(int cap) {
 		data = new int[cap];
@@ -67,7 +67,7 @@ public class Queue {
 	{
 		for(int i=0;i<size;i++)
 		{
-			System.out.println(data[(i+front)%data.length]);
+			System.out.print(data[(i+front)%data.length]);
 		}
 	}
 }

@@ -2,7 +2,7 @@ package com.ds.practice;
 
 import java.util.Scanner;
 
-public class MaxFreqCheck {
+public class MaxFreqCheck2 {
 	
 
 	public static void main(String[] args) {
@@ -10,16 +10,16 @@ public class MaxFreqCheck {
 		Scanner sc = new Scanner(System.in);
 		int t = sc.nextInt();
 		for (int i1 = 0; i1 < t; i1++) {
-			String str = sc.next();
+			String str = sc.nextLine();
 			check(str);
 		}
 	}
 
 	public static void check(String str) {
-		 int ar[] = new int[26];
+		 int ar[] = new int[256];
 		for (int i = 0; i < str.length(); i++) {
 
-			ar[str.charAt(i) - 'a']++;
+			ar[str.charAt(i)]++;
 		}
 
 		int max = 0;
@@ -32,7 +32,7 @@ public class MaxFreqCheck {
 				index = i;
 			}
 		}
-		char ch = (char) (index + 97);
-		System.out.println(ch);
+		char ch =  (char) (index);
+		System.out.print(ch+" ");
 	}
 }

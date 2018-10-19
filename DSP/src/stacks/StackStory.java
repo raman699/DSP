@@ -3,8 +3,8 @@ package stacks;
 public class StackStory {
 
 	public static void main(String... s) {
-		Stack stack = new Stack(5);
-		stack.pop();
+		StackUsingQueue2 stack = new StackUsingQueue2(5);
+		//stack.pop();
 		stack.push(10);
 		stack.display();
 		System.out.println();

@@ -2,8 +2,8 @@ package stacks;
 
 public class Stack {
 
-	private int data[];
-	private int tos = -1;
+	protected int data[];
+	protected int tos = -1;
 
 	public Stack(int cap) {
 
@@ -26,7 +26,7 @@ public class Stack {
 
 	public boolean isFull() {
 		if (tos == data.length - 1) {
-			System.out.println("stack is full");
+			//System.out.println("stack is full");
 			return true;
 		} else
 			return false;
