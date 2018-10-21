@@ -9,17 +9,17 @@ public class Pattern3 {
 		int n = sc.nextInt();
 		int a = 0;
 		int b = 1;
-		int c1 = 0;
+		int c1 = a+b;
 
 		int r = 1;
 		while (r <= n) {
 			int c = 1;
 			while (c <= r) {
 				System.out.print(a + " ");
-				c1 = a + b;
+				
 				a = b;
 				b = c1;
-
+				c1 = a + b;
 				c++;
 			}
 			System.out.println();

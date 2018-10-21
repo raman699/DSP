@@ -3,7 +3,7 @@ package recursions;
 public class TowerOhHanoi {
 
 	public static void main(String[] args) {
-		toh(3,"A","B","C");
+		toh(2,"A","C","B");
 
 	}
 
@@ -17,7 +17,7 @@ public class TowerOhHanoi {
 		}
 		toh(n-1,src,helper,des);
 		
-		System.out.println( "from "+src +" to "+des);
+		System.out.println( "Move disc ["+n+"] "+"from "+src +" to "+des);
 		
 		toh(n-1,helper,des,src);
 		

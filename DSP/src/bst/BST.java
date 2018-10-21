@@ -220,26 +220,40 @@ public class BST {
 		{
 			return ;
 		}
+		
 		if(node.data>lo && node.data<hi)
 		{
+			
+			printInRange(node.left,lo,hi);
 			System.out.println(node.data);
+			printInRange(node.right,lo,hi);
 		}
-		if(node.data>lo || node.data >hi)
+		else if(node.data>lo)
 		{
 			printInRange(node.left,lo,hi);
 		}
-		if(node.data <hi || node.data<lo)
+		else if(node.data <hi)
 		{
 			printInRange(node.right,lo,hi);
 		}
-//		if(node.data>lo)
-//		{
-//			printInRange(node.left,lo,hi);
-//		}
-//		if(node.data <hi)
-//		{
-//			printInRange(node.right,lo,hi);
-//		}
 		 
+	}
+	
+	public void printLargerWithValues()
+	{
+		printLargerWithValues(root);
+	}
+	int sum=0;
+	private void printLargerWithValues(Node node)
+	{
+		if(node==null)
+		{
+			return ;
+		}
+		printLargerWithValues(node.right);
+		int temp=node.data;
+		node.data=sum;
+		sum+=temp;
+		printLargerWithValues(node.left);
 	}
 }
