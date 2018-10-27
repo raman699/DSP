@@ -32,9 +32,11 @@ public class Rotataion90 {
 //		}
 	}
 	public static void display(int ar[][]) {
-	for(int col=0;col<ar[0].length;col++)
-	{
-		
-	}
+		for (int row = 0; row < ar.length; row++) {
+			for (int col = 0; col < ar[0].length; col++) {
+				System.out.print(ar[row][col] + "  ");
+			}
+			System.out.println(".");
+		}
 	}
 }

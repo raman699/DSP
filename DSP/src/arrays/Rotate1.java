@@ -1,5 +1,6 @@
 package arrays;
-
+// bad approach
+// use reverse one
 public class Rotate1 {
 
 	public static void main(String[] args) {

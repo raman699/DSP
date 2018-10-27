@@ -1,5 +1,7 @@
 package arrays;
 
+// bad approach
+//use two pinters
 public class Reverse {
 
 	public static void main(String[] args) {

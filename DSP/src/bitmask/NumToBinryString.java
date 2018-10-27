@@ -3,7 +3,7 @@ package bitmask;
 public class NumToBinryString {
 
 	public static void main(String[] args) {
-		int n=-200;
+		int n=57;
 		System.out.println(Integer.toBinaryString(n));
 
 		
