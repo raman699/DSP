@@ -3,14 +3,14 @@ package recursions;
 public class ArrayDsiplay {
 
 	public static void main(String[] args) {
-		int[] arr = { -4, -5, -3,-3, -9, -2,-9 };
+		int[] arr = { -4, -5, -3, -3, -9, -2, -9 };
 		// display(arr, 0);
 		// revDisplay(arr, 0);
 		// int r = max(arr, 0);
 		// System.out.println(r);
 //		boolean r = find(arr, 0, -11);
 //		System.out.println(r);
-		int r = lastIndex(arr,0,-4);
+		int r = lastIndex(arr, 0, -4);
 		System.out.println(r);
 
 	}
@@ -65,43 +65,32 @@ public class ArrayDsiplay {
 	}
 
 	public static int findFirst(int[] arr, int vidx, int data) {
-	
-		if(vidx==arr.length)
-		{
+
+		if (vidx == arr.length) {
 			return -1;
 		}
-		
-		if(data==arr[vidx])
-		{
+
+		if (data == arr[vidx]) {
 			return vidx;
 		}
-		int r=findFirst(arr,vidx+1,data);
-		 return r;
-		//int r= findFirst(arr,vidx+1,data);		
+		int r = findFirst(arr, vidx + 1, data);
+		return r;
+		// int r= findFirst(arr,vidx+1,data);
 	}
-	
-	public static int lastIndex(int[] arr, int vidx, int data)
-	{
-int res;
-		if(vidx==arr.length)
-		{
+
+	public static int lastIndex(int[] arr, int vidx, int data) {
+
+		if (vidx == arr.length) {
 			return -1;
 		}
-		int r=lastIndex(arr,vidx+1,data);
-		if(r!=-1)
-		{
-			//res=r;
+		int r = lastIndex(arr, vidx + 1, data);
+		if (r != -1) {
 			return r;
-		}
-		else if (arr[vidx]==data)
-		{
-			res=vidx;
+		} else if (arr[vidx] == data) {
 			return vidx;
-		}
-		else
-		{
+		} else {
 			return -1;
 		}
-		
+
 	}
 }

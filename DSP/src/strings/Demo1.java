@@ -5,7 +5,7 @@ public class Demo1 {
 	public static void main(String... s) {
 		String r = "raman";
 //		printAllChar(r);
-//		printAllSubstring(r);
+	//	printAllSubstring(r);
 		areSubstringPallindrome("amman");
 
 	}

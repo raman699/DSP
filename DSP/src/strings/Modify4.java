@@ -3,7 +3,7 @@ package strings;
 public class Modify4 {
 
 	public static void main(String[] args) {
-		String s = modify5("aaabbbaaaccdddeffghh");
+		String s = modify5("aaabbbaaaccdddeffghhd");
 		System.out.println(s);
 
 	}
