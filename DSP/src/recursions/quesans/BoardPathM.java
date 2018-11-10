@@ -48,6 +48,7 @@ public class BoardPathM {
 
 	}
 
+/// Actually it is setting the connect for N queen prblem
 	public static void printBPWithMutiple(int sr, int sc, int dr, int dc, String psf) {
 		if (sr == dr && sc == dc) {
 			System.out.println(psf);
@@ -65,6 +66,7 @@ public class BoardPathM {
 				}
 			}
 		}
+		
 		if (sc < dc) {
 
 			for (int j = 1; j <= dc; j++) {
@@ -73,14 +75,15 @@ public class BoardPathM {
 					call++;
 				}
 			}
-			if (sr < dr && sc < dc) {
-				for (int k = 1; k <= dr && k <= dc; k++) {
+		}
+		if (sr < dr && sc < dc) {
+			for (int k = 1; k <= dr && k <= dc; k++) {
 
-					if (sr + k <= dr && sc + k <= dc) {
-						printBPWithMutiple(sr + k, sc + k, dr, dc, psf + "d" + (k));
-						call++;
-					}
+				if (sr + k <= dr && sc + k <= dc) {
+					printBPWithMutiple(sr + k, sc + k, dr, dc, psf + "d" + (k));
+					call++;
 				}
+
 			}
 
 		}

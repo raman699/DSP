@@ -15,6 +15,7 @@ public class BoardPath {
 		snl[9] = 24;
 		snl[20] = 4;
 		snl[26] = 2;
+		getBoardSnP(0, 9, snl, moves, 0);
 		getBoardSnP(0, 28, snl, moves, 0);
 
 	}

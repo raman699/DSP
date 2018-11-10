@@ -7,11 +7,11 @@ public class Installments {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		paymentP(10, new int[] { 2, 3, 5, 6 }, "", 0);
-		count=0;
-		paymentC(10, new int[] { 2, 3, 5, 6 }, "", 0,-1);
-		count=0;
-		paymentCC(10, new int[] { 2, 3, 5, 6}, "",0);
-		count=0;
+//		count=0;
+//		paymentC(10, new int[] { 2, 3, 5, 6 }, "", 0,-1);
+//		count=0;
+//		paymentCC(10, new int[] { 2, 3, 5, 6}, "",0);
+//		count=0;
 		
 		System.out.println(count);
 

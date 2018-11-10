@@ -8,12 +8,12 @@ public class EquiSets {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int ar[] = { 10, 20, 30, 40, 50 };
-		// printEquiSet(ar, 0, new ArrayList<Integer>(), 0, new ArrayList<Integer>(),
-		// 0);
-		//targetSet(ar, 0, new ArrayList<Integer>(), 0, 50);
-		ArrayList<String> al=targetSetArrayList(ar,0, new ArrayList<Integer>(),0,50);
-		System.out.println(al);
+		int ar[] = { 10, 20, 30, 40, 20 };
+//		 printEquiSet(ar, 0, new ArrayList<Integer>(), 0, new ArrayList<Integer>(),
+//		 0);
+		targetSet(ar, 0, new ArrayList<Integer>(), 0, 50);
+		//ArrayList<String> al=targetSetArrayList(ar,0, new ArrayList<Integer>(),0,50);
+		//System.out.println(al);
 	//	printSSSprintPermuations(new StringBuilder("abc"), new StringBuilder(""));
 		//printPermuations("abab", "");
 		System.out.println(count);

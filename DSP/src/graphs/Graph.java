@@ -443,124 +443,111 @@ public class Graph {
 		return false;
 
 	}
-	
-	class DkikPair implements Comparable<DkikPair>
-	{
+
+	class DkikPair implements Comparable<DkikPair> {
 		String name;
 		String psf;
 		int csf;
-		DkikPair(String name,String psf,int csf)
-		{
-			this.name=name;
-			this.psf=psf;
-			this.csf=csf;
+
+		DkikPair(String name, String psf, int csf) {
+			this.name = name;
+			this.psf = psf;
+			this.csf = csf;
 		}
+
 		@Override
 		public int compareTo(DkikPair o) {
 			// TODO Auto-generated method stub
-			return this.csf-o.csf;
+			return this.csf - o.csf;
 		}
 	}
-	public void djikstra(String src)
-	{
-		PriorityQueue<DkikPair> queue= new PriorityQueue<DkikPair>();
-		HashSet<String> visitied= new HashSet();
-		
-		queue.add(new DkikPair(src,src,0));
-		
-		while(queue.size()>0)
-		{
-			DkikPair rp=queue.remove();
-			
-			if(visitied.contains(rp.name))
-			{
+
+	public void djikstra(String src) {
+		PriorityQueue<DkikPair> queue = new PriorityQueue<DkikPair>();
+		HashSet<String> visitied = new HashSet();
+
+		queue.add(new DkikPair(src, src, 0));
+
+		while (queue.size() > 0) {
+			DkikPair rp = queue.remove();
+
+			if (visitied.contains(rp.name)) {
 				continue;
 			}
 			visitied.add(rp.name);
-			System.out.println(rp.name+"@  "+rp.psf+" "+rp.csf);
-			
-			for(String nbr: vces.get(rp.name).keySet())
-			{
-				if(!visitied.contains(nbr))
-				{
-					queue.add(new DkikPair(nbr,rp.psf+nbr,rp.csf+vces.get(rp.name).get(nbr)));
+			System.out.println(rp.name + "@  " + rp.psf + " " + rp.csf);
+
+			for (String nbr : vces.get(rp.name).keySet()) {
+				if (!visitied.contains(nbr)) {
+					queue.add(new DkikPair(nbr, rp.psf + nbr, rp.csf + vces.get(rp.name).get(nbr)));
 				}
 			}
 		}
 	}
-	
-	class PrimsPair implements Comparable<PrimsPair>
-	{
+
+	class PrimsPair implements Comparable<PrimsPair> {
 		String vname;
 		String pname;
 		int ecost;
-		PrimsPair(String vname,String pname,int ecost)
-		{
-			this.vname=vname;
-			this.pname=pname;
-			this.ecost=ecost;
+
+		PrimsPair(String vname, String pname, int ecost) {
+			this.vname = vname;
+			this.pname = pname;
+			this.ecost = ecost;
 		}
+
 		@Override
 		public int compareTo(PrimsPair o) {
-			return this.ecost-o.ecost;
+			return this.ecost - o.ecost;
 		}
 	}
-	
-	public Graph prims()
-	{
-		Graph mst= new Graph();
-		HashSet<String> visitied= new HashSet<String>();
-		
-		PriorityQueue<PrimsPair> queue= new PriorityQueue<PrimsPair>();
-		ArrayList<String> al=new ArrayList<>(vces.keySet());
-		queue.add(new PrimsPair(al.get(0),null,0));
-		
-		while(queue.size()>0)
-		{
-			//remove
-			PrimsPair rp= queue.remove();
-			
-			//mark *
-			if(visitied.contains(rp.vname))
-			{
+
+	public Graph prims() {
+		Graph mst = new Graph();
+		HashSet<String> visitied = new HashSet<String>();
+
+		PriorityQueue<PrimsPair> queue = new PriorityQueue<PrimsPair>();
+		ArrayList<String> al = new ArrayList<>(vces.keySet());
+		queue.add(new PrimsPair(al.get(0), null, 0));
+
+		while (queue.size() > 0) {
+			// remove
+			PrimsPair rp = queue.remove();
+
+			// mark *
+			if (visitied.contains(rp.vname)) {
 				continue;
 			}
 			visitied.add(rp.vname);
-			//work
+			// work
 			mst.addVertex(rp.vname);
-			if(rp.pname!=null)
-			{
+			if (rp.pname != null) {
 				mst.addEdge(rp.vname, rp.pname, rp.ecost);
 			}
-			//add visitied *
-			
-			for(String nbr:vces.get(rp.vname).keySet())
-			{
-				if(!visitied.contains(nbr))
-				{
-					queue.add(new PrimsPair(nbr,rp.vname,vces.get(rp.vname).get(nbr)));
+			// add visitied *
+
+			for (String nbr : vces.get(rp.vname).keySet()) {
+				if (!visitied.contains(nbr)) {
+					queue.add(new PrimsPair(nbr, rp.vname, vces.get(rp.vname).get(nbr)));
 				}
 			}
 		}
-		
+
 		return mst;
 	}
-	
-	class BPair
-	{
+
+	class BPair {
 		String name;
 		boolean color;
-		
-		public BPair(String name, boolean color)
-		{
-			this.name=name;
-			this.color=color;
+
+		public BPair(String name, boolean color) {
+			this.name = name;
+			this.color = color;
 		}
 	}
-	
-	public boolean isBipartite()
-	{
-		HashMap<String,Boolean> visited = new HashMap<>();
+
+	public boolean isBipartite() {
+		HashMap<String, Boolean> visited = new HashMap<>();
 		for (String vname : vces.keySet()) {
 			if (visited.containsKey(vname) == false) {
 				boolean isBipartite = bipartiteComponent(vname, visited);
@@ -571,8 +558,8 @@ public class Graph {
 		}
 		return true;
 	}
-	
-	private boolean bipartiteComponent(String src, HashMap<String,Boolean> visited) {
+
+	private boolean bipartiteComponent(String src, HashMap<String, Boolean> visited) {
 
 		BPair rootPair = new BPair(src, false);
 		LinkedList<BPair> queue = new LinkedList<>();
@@ -581,24 +568,172 @@ public class Graph {
 			// 1.Remove from Queue
 			BPair rp = queue.removeFirst();
 			if (visited.containsKey(rp.name)) {
-				boolean old= visited.get(rp.name);
-				if(old==rp.color)
-				{
+				boolean old = visited.get(rp.name);
+				if (old == rp.color) {
 					continue;
 				}
 				return false;
 			}
 			// 2. Mark
-			visited.put(rp.name,rp.color);
+			visited.put(rp.name, rp.color);
 			// 3.Add the nbr
 			for (String nbr : vces.get(rp.name).keySet()) {
 				if (visited.containsKey(nbr) == false) {
-					queue.addLast(new BPair(nbr,!rp.color));
+					queue.addLast(new BPair(nbr, !rp.color));
 				}
 			}
 
 		}
 		return true;
+
+	}
+
+	private class KruPair implements Comparable<KruPair> {
+
+		String vname1;
+		String vname2;
+		int cost;
+
+		KruPair(String vname1, String vname2, int cost) {
+			this.vname1 = vname1;
+			this.vname2 = vname2;
+			this.cost = cost;
+
+		}
+
+		@Override
+		public int compareTo(KruPair o) {
+			// TODO Auto-generated method stub
+			return this.cost - o.cost;
+		}
+	}
+
+	private class DSNode {
+		String vname;
+		DSNode parent;
+		int rank = 0;
+
+		DSNode(String name) {
+			this.vname = name;
+			this.parent = this;
+		}
+	}
+
+	// find leader
+	private DSNode find(DSNode dsnode) {
+		if (dsnode == dsnode.parent) {
+			return dsnode;
+		}
+
+		return dsnode.parent = find(dsnode.parent);
+	}
+
+	private void merge(DSNode n1, DSNode n2) {
+		if (n1.rank > n2.rank) {
+			n2.parent = n1;
+		} else if (n2.rank > n1.rank) {
+			n1.parent = n2;
+		} else {
+			n1.parent = n2;
+			n2.rank++;
+		}
+
+	}
+
+	public Graph krukshals() {
+		Graph mst = new Graph();
+		HashMap<String, DSNode> dnodes = new HashMap<String, DSNode>();
+
+		PriorityQueue<KruPair> queue = new PriorityQueue<KruPair>();
+
+		for (String key : vces.keySet()) {
+			dnodes.put(key, new DSNode(key));
+
+			for (String skey : vces.get(key).keySet()) {
+				queue.add(new KruPair(key, skey, vces.get(key).get(skey)));
+			}
+		}
+
+		while (queue.size() > 0) {
+			KruPair kedge = queue.remove();
+			DSNode n1leader = find(dnodes.get(kedge.vname1));
+			DSNode n2leader = find(dnodes.get(kedge.vname2));
+
+			if (n1leader != n2leader) {
+				merge(n1leader, n2leader);
+				mst.addVertex(kedge.vname1);
+				mst.addVertex(kedge.vname2);
+				mst.addEdge(kedge.vname1, kedge.vname2, vces.get(kedge.vname1).get(kedge.vname2));
+			}
+
+		}
+
+		return mst;
+	}
+
+	String hsrc;
+
+	public void hamiltonCyclePath(String src) {
+
+		hsrc = src;
+//		for(String key:vces.keySet())
+//		{
+//			hamiltonCyclePath(src, key, new HashSet<String>(), "");
+//		}
+
+		hamiltonCyclePath1(src, new HashSet<String>(), "");
+
+	}
+
+	private void hamiltonCyclePath(String v1, String v2, HashSet<String> visited, String psf) {
+
+		if (v1.equals(v2)) {
+
+			if (psf.length() == vces.keySet().size() - 1) {
+				System.out.println("HP::" + psf + v2);
+				if (containsEdge(v2, hsrc)) {
+					System.out.println("HC::" + "YES");
+				} else {
+					System.out.println("HC::" + "No");
+				}
+			}
+
+		}
+		visited.add(v1);
+		for (String key : vces.get(v1).keySet()) {
+
+			if (!visited.contains(key)) {
+
+				hamiltonCyclePath(key, v2, visited, psf + v1);
+			}
+
+		}
+		visited.remove(v1);
+
+	}
+
+	private void hamiltonCyclePath1(String v1, HashSet<String> visited, String psf) {
+
+		if (visited.size() == vces.size()-1) {
+
+			System.out.println("HP::" + psf + v1);
+			if (containsEdge(v1, hsrc)) {
+				System.out.println("HC::" + "YES");
+			} else {
+				System.out.println("HC::" + "No");
+			}
+
+		}
+		visited.add(v1);
+		for (String key : vces.get(v1).keySet()) {
+
+			if (!visited.contains(key)) {
+
+				hamiltonCyclePath1(key, visited, psf + v1);
+			}
+
+		}
+		visited.remove(v1);
 
 	}
 }

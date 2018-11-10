@@ -6,10 +6,10 @@ public class Permutate {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// printPermuatationsOnTheBasisOfAnswer(new StringBuilder("abc"),new
-		// StringBuilder());
+		 printPermuatationsOnTheBasisOfAnswer(new StringBuilder("abc"),new
+		 StringBuilder());
 		//printPermuatationsOnTheBasisOfQuestion(new StringBuilder("abc"), new StringBuilder());
-		printPermuatationsOnTheBasisOfAnswer(new StringBuilder("aab"), new StringBuilder());
+//		printPermuatationsOnTheBasisOfAnswer(new StringBuilder("aab"), new StringBuilder());
 		System.out.println(count);
 
 	}

@@ -7,7 +7,7 @@ public class SubstringArrayList {
 	static String[] codes = { ".;", "abc", "de", "fghi", "jkl", "mn", "opq", "rstu", "vw", "xyz" };
 
 	public static void main(String[] args) {
-		ArrayList al = getSS("abc");
+		ArrayList al = getSSVar("12");
 		System.out.println(al.size());
 		System.out.println(al);
 

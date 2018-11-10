@@ -5,9 +5,9 @@ public class QueenCom {
 	static int count;
 
 	public static void main(String[] args) {
-		// test(new boolean[4], 2, 0, -1, "");
-		//com(new boolean[4], 2, 0, 0, "");
-		//printBoxWise(new boolean[4], 2,0,0,"");
+//		 test(new boolean[4], 2, 0, -1, "");
+		com(new boolean[4], 2, 0, 0, "");
+//		printBoxWise(new boolean[4], 2,0,0,"");
 
 	}
 
