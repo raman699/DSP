@@ -18,6 +18,7 @@ public class BinaryTreeClient {
 		
 		BinaryTree tree= new BinaryTree(arr);
 		BinaryTree treecheck= new BinaryTree(one,two);
+		tree.display();
 		//tree.display();
 		//tree.removeleaf();
 		//tree.display();
@@ -39,7 +40,7 @@ public class BinaryTreeClient {
 		//tree.preo();
 		//tree.posto();
 	//	tree.levelo();
-		//tree.preoIterative();
+		tree.preoIterative();
 		 
 //		int pre[]= {50,25,12,10,37,40,75,62,70,87};
 //		int in[]= {10,12,25,37,40,50,62,70,75,87};
@@ -49,7 +50,7 @@ public class BinaryTreeClient {
 		// System.out.println(tree1.diameter2());
 		// System.out.println(tree.isBST());
 		//tree.isLargestBST();
-		treecheck.display();
+		//treecheck.display();
 		//treecheck.isLargestBST();
  
 	}

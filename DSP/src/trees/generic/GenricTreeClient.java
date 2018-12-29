@@ -11,12 +11,12 @@ public class GenricTreeClient {
 				-1 };
 		Generictree tree = new Generictree(arr);
 		//tree.display();
-		System.out.println(tree.size);
-		System.out.println(tree.size2());
-		System.out.println("max=" + tree.max());
-		System.out.println(tree.find(1200));
-		System.out.println("height" + tree.height());
-		tree.posto();
+		//System.out.println(tree.size);
+		//System.out.println(tree.size2());
+		//System.out.println("max=" + tree.max());
+		//System.out.println(tree.find(1200));
+		////System.out.println("height" + tree.height());
+	//	tree.posto();
 		// tree.preo();
 		// tree.posto();
 		// tree.levelo();
@@ -34,7 +34,7 @@ public class GenricTreeClient {
 //		System.out.println();
 //		System.out.println(tree.lca(110,70));
 //		
-//		System.out.println(tree.dbn(110, 70));
+		System.out.println(tree.dbn(110, 70));
 //		tree.display();
 //		tree.mirror();
 //		tree.display();

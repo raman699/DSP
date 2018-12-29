@@ -5,7 +5,8 @@ public class GoodParenthesis {
 	static Stack stack = new Stack(5);
 
 	public static void main(String[] args) {
-		String s = "(a+c+((((c+d))+e))+f)";
+		String s = "(a+c+((c+d)+e)+f)";
+		s="(())";
 		stack = new Stack(s.length());
 		boolean valid = false;
 		for (int i = 0; i < s.length(); i++) {

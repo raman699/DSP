@@ -2,15 +2,19 @@ package sorting;
 
 public class QucikSort {
 
+	static int count;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 
-		int arr[] = { 2, 25, 10, 16, 18, 1, 17 };
+		int arr1[] = { 2, 25, 10, 16, 18, 1, 17 };
+		int arr[]= {7,1,3,2,4,5,6};
 		int ar2[]= {0,0,0,1,2,2,1,0,1};
 		//int i = partioning(arr);
-		quickSort(arr,0,arr.length-1);
+		quickSort(arr,0,(arr.length-1));
 		//sort012(ar2);
 		display(arr);
+		System.out.println(count);
 	}
 
 	public static int partioning(int[] arr) {
@@ -52,6 +56,7 @@ public class QucikSort {
 
 	
 	public static void swap(int ar[], int i, int j) {
+		count++;
 		int temp = ar[i];
 		ar[i] = ar[j];
 		ar[j] = temp;

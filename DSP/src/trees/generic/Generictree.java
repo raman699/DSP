@@ -210,7 +210,7 @@ public class Generictree {
 		}
 
 	}
-
+//distance between nodes
 	public int dbn(int val1, int val2) {
 		ArrayList<Integer> al1 = rootToNodePath(val1);
 

@@ -106,6 +106,8 @@ public class LinkedList {
 		}
 	}
 
+	//is the complexity o(n)
+	// i can improve by saying that if index==0 -- getFirst() and index==size-1
 	private Node getNodeAt(int index) {
 		if (index < 0 || index >= size) {
 			System.out.println("Index out of bound");
@@ -404,8 +406,9 @@ public class LinkedList {
 			}
 			if (cur.data == next.data) {
 				next = next.next;
+				size--;//modified later should be correct
 			} else {
-				size++;
+				//size++;
 				cur.next = next;
 				cur = next;
 				next = next.next;
@@ -487,7 +490,7 @@ public class LinkedList {
 		return two;
 
 	}
-
+//reverse in group of three
 	public void kreverse(int k) {
 		LinkedList prev = new LinkedList();
 		LinkedList curr = new LinkedList();

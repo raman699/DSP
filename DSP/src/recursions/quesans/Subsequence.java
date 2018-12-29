@@ -3,7 +3,7 @@ package recursions.quesans;
 public class Subsequence {
 
 	public static void main(String[] args) {
-		getAsciiSS("abc","");
+		getSS("abc","");
 
 	}
 
