@@ -10,6 +10,7 @@ public class GenricTreeClient {
      int arr2[] = { 1, 2, 5, -1, 6, -1, -1, 3, 7, -1, 8, 11, -1, 12, -1, -1, 9, -1, -1, 4, 10, -1, -1,
 				-1 };
 		Generictree tree = new Generictree(arr);
+		tree.display();
 		//tree.display();
 		//System.out.println(tree.size);
 		//System.out.println(tree.size2());
@@ -34,7 +35,7 @@ public class GenricTreeClient {
 //		System.out.println();
 //		System.out.println(tree.lca(110,70));
 //		
-		System.out.println(tree.dbn(110, 70));
+	//	System.out.println(tree.dbn(110, 70));
 //		tree.display();
 //		tree.mirror();
 //		tree.display();
