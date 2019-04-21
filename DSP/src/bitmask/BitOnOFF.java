@@ -4,7 +4,7 @@ public class BitOnOFF {
 
 	public static void main(String[] args) {
 		int n=57;
-		int k=3;
+		int k=2;
 		int bitmask=1<<k;
 		System.out.println(Integer.toBinaryString(n));
 		

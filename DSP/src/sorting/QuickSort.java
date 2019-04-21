@@ -1,6 +1,6 @@
 package sorting;
 
-public class QucikSort {
+public class QuickSort {
 
 	static int count;
 	public static void main(String[] args) {
@@ -21,34 +21,34 @@ public class QucikSort {
 
 		int pivot = arr[arr.length - 1];
 
-		int i = 0;
+		int itr = 0;
 		int pidx = 0;
 
-		while (i < arr.length) {
-			if (arr[i] <= pivot) {
-				swap(arr, i, pidx);
+		while (itr < arr.length) {
+			if (arr[itr] <= pivot) {
+				swap(arr, itr, pidx);
 				pidx++;
-				i++;
+				itr++;
 
 			} else {
-				i++;
+				itr++;
 			}
 		}
 		return pidx - 1;
 	}
 	
 	public static int partioningQ(int[] arr,int lo,int hi,int pivot) {
-		int i = lo;
+		int itr = lo;
 		int pidx = lo;
 
-		while (i <= hi) {
-			if (arr[i] <= pivot) {
-				swap(arr, i, pidx);
+		while (itr <= hi) {
+			if (arr[itr] <= pivot) {
+				swap(arr, itr, pidx);
 				pidx++;
-				i++;
+				itr++;
 
 			} else {
-				i++;
+				itr++;
 			}
 		}
 		return pidx - 1;

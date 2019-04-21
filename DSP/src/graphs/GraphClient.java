@@ -25,6 +25,11 @@ public class GraphClient {
 //
 		g.addEdge("C","F", 8);
 		
+//		g.bft();
+//		System.out.println("-------");
+//		
+//		g.bfs("A", "G");
+		g.djikstra("A");
 		//disconnected
 		
 		//g.addEdge("A", "D", 40);
@@ -55,10 +60,10 @@ public class GraphClient {
 //		System.out.println("-----------------------");
 //		mst.display();
 	//	System.out.println(g.isBipartite());
-		Graph mst=g.krukshals();
+		//Graph mst=g.krukshals();
 		//mst.display();
 		
-		g.hamiltonCyclePath("A");
+		//g.hamiltonCyclePath("A");
 		
 		
 	}

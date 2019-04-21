@@ -6,6 +6,7 @@ public class Board {
 
 	public static void main(String[] args) {
 		ArrayList<String> al= getBoard1(0,10);
+		System.out.println(al);
 		System.out.println(al.size());
 
 	}

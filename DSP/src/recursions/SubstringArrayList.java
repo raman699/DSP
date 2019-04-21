@@ -10,6 +10,7 @@ public class SubstringArrayList {
 		ArrayList al = getSSVar("12");
 		System.out.println(al.size());
 		System.out.println(al);
+//[ad, ae, bd, be, cd, ce]
 
 	}
 

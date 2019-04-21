@@ -5,7 +5,8 @@ public class BoardPathM {
 	static int count, call;
 
 	public static void main(String[] args) {
-		printBPWithMutipleS(0, 0, 2, 2, "");
+		//printBPWithMutipleS(0, 0, 2, 2, "");
+		printBP(0, 0, 2, 2, "");
 		System.out.println(count + " " + call);
 
 	}
@@ -48,7 +49,7 @@ public class BoardPathM {
 
 	}
 
-/// Actually it is setting the connect for N queen prblem
+/// Actually it is setting the connect for N queen problem
 	public static void printBPWithMutiple(int sr, int sc, int dr, int dc, String psf) {
 		if (sr == dr && sc == dc) {
 			System.out.println(psf);
@@ -89,6 +90,7 @@ public class BoardPathM {
 		}
 	}
 
+	//good solution
 	public static void printBPWithMutipleS(int sr, int sc, int dr, int dc, String psf) {
 		if (sr == dr && sc == dc) {
 			System.out.println(psf);

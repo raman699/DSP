@@ -177,7 +177,7 @@ public class Graph {
 		System.out.println(scp + "@" + sc);
 		System.out.println(lcp + "@" + lc);
 		System.out.println(jlc + "@" + jlp);
-		System.out.println("kth largest" + pq.peek().path + pq.peek().cost);
+		System.out.println(k+"kth largest" + pq.peek().path + pq.peek().cost);
 	}
 
 	private void multiSolver(String src, String des, HashSet<String> visited, String psf, int csf, int k, int jlw) {
@@ -334,7 +334,7 @@ public class Graph {
 		}
 	}
 
-	public void dftComponent(String src, HashSet<String> visited) {
+	private void dftComponent(String src, HashSet<String> visited) {
 
 		TPair rootPair = new TPair(src, src);
 		LinkedList<TPair> stack = new LinkedList<>();
