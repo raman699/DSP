@@ -31,11 +31,11 @@ public class LinkedList {
 
 	public void display() {
 
-		Node temp = head;
-		while (temp != null) {
+		Node itr = head;
+		while (itr != null) {
 
-			System.out.print(temp.data + " ");
-			temp = temp.next;
+			System.out.print(itr.data + " ");
+			itr = itr.next;
 		}
 		System.out.println(".");
 	}
@@ -66,13 +66,13 @@ public class LinkedList {
 			return -1;
 		}
 
-		Node temp = head;
-		int i = 0;
-		while (i < index) {
-			temp = temp.next;
-			i++;
+		Node nodeItr = head;
+		int itr = 0;
+		while (itr < index) {
+			nodeItr = nodeItr.next;
+			itr++;
 		}
-		return temp.data;
+		return nodeItr.data;
 
 	}
 
@@ -114,13 +114,13 @@ public class LinkedList {
 			return null;
 		}
 
-		Node temp = head;
-		int i = 0;
-		while (i < index) {
-			temp = temp.next;
-			i++;
+		Node nodeItr = head;
+		int itr = 0;
+		while (itr < index) {
+			nodeItr = nodeItr.next;
+			itr++;
 		}
-		return temp;
+		return nodeItr;
 
 	}
 
@@ -409,7 +409,7 @@ public class LinkedList {
 				size--;//modified later should be correct
 			} else {
 				//size++;
-				cur.next = next;
+				cur.next = next;// 21-APR-2019 verify is it valid ? This is necessary to remove the link between two consecutive same elements
 				cur = next;
 				next = next.next;
 
@@ -419,15 +419,15 @@ public class LinkedList {
 	}
 
 	public int mid() {
-		Node first = head;
-		Node second = head;
+		Node slowPtr = head;
+		Node fastPtr = head;
 
-		while (second != null && second.next != null && second.next.next != null) {
-			first = first.next;
-			second = second.next.next;
+		while (fastPtr != null && fastPtr.next != null && fastPtr.next.next != null) {
+			slowPtr = slowPtr.next;
+			fastPtr = fastPtr.next.next;
 		}
 
-		return first.data;
+		return slowPtr.data;
 
 	}
 
@@ -445,18 +445,18 @@ public class LinkedList {
 	}
 
 	public int kthFromLast(int k) {
-		Node first = head;
-		Node second = head;
+		Node slowPtr = head;
+		Node fastPtr = head;
 
 		for (int i = 0; i < k; i++) {
-			second = second.next;
+			fastPtr = fastPtr.next;
 		}
-		while (second != null) {
-			first = first.next;
-			second = second.next;
+		while (fastPtr != null) {
+			slowPtr = slowPtr.next;
+			fastPtr = fastPtr.next;
 		}
 
-		return first.data;
+		return slowPtr.data;
 	}
 
 	public static LinkedList mergrsortedLists(LinkedList one, LinkedList two) {
@@ -547,6 +547,7 @@ public class LinkedList {
 		tail= even.size > 0 ? even.tail:odd.tail;
 		size=even.size+odd.size;
 		
+		//don't knoe below logic wierd 
 		head=odd.head;
 		tail=odd.tail;
 		size=odd.size;

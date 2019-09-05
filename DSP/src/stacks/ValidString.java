@@ -6,7 +6,7 @@ public class ValidString {
 
 	public static void main(String[] args) {
 		String s = "[a+{h+(c+d)+e}+f]";
-		s="[a+{b+(c+d)+e}+f]}";
+	//	s="[a+{b+(c+d)+e}+f]}";
 
 		boolean valid = false;
 		for (int i = 0; i < s.length(); i++) {

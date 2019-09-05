@@ -114,7 +114,6 @@ public class BinaryTree {
 
 	private Node construct(int[] pre, int in[], int psi, int pei, int isi, int iei) {
 		// base case
-
 		if (isi > iei || psi > pei) {
 			return null;
 		}

@@ -3,7 +3,7 @@ package com.ds.numbers;
 public class BinaryToDecimal {
 
 	public static void main(String[] args) {
-		int n=1010;
+		int n=1110;
 		int rem=0;
 		int power=1;
 		double number=0;

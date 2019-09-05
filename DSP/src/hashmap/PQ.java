@@ -8,7 +8,7 @@ public class PQ {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int arr[] = { 10, 1, 23, 7, 44, 55 };
-		print2(arr, 3);
+		print(arr, 3);
 
 	}
 
@@ -19,6 +19,7 @@ public class PQ {
 		for (int i : arr) {
 			pq.add(i);
 		}
+		System.out.println(pq);
 		for (int i = 0; i < k; i++) {
 			System.out.println(pq.remove());
 		}
