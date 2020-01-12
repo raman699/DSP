@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class GenericTree {
+public class GenericTree1 {
 
 	private class Node
 	{
@@ -14,7 +14,7 @@ public class GenericTree {
 	private int size;
 	private Node root;
 	
-	public GenericTree()
+	public GenericTree1()
 	{
 		construct(new Scanner(System.in),null,0);
 		Stack s= new Stack();
