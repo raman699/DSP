@@ -1,0 +1,4 @@
+Generate personal access token
+Install github cli (gh)
+Install GCM
+Configue cache in gcm
