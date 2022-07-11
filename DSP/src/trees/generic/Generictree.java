@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
 
-import javax.xml.soap.Node;
-
 public class Generictree
 {
 
