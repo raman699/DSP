@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ValidString {
 
-//to fix 
+//to fix asap
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
